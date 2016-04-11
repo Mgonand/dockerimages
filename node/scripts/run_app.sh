@@ -2,6 +2,7 @@ set -e
 
 if [ -d /bundle ]; then
   cd /bundle
+  npm install -g forever
   if [[ $APP_NODE_DIR ]]; then
     echo "=> Node app is in a inner directory. *************"
     cd $APP_NODE_DIR
