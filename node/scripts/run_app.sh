@@ -3,6 +3,7 @@ set -e
 if [ -d /bundle ]; then
   cd /bundle
   if [[ $APP_NODE_DIR ]]; then
+    echo "=> Node app is in a inner directory. *************"
     cd $APP_NODE_DIR
     npm install --production
     cd ..
