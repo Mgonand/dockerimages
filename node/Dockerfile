@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM ubuntu:14.04
 MAINTAINER BinPar Team S.L.
 
 ENV METEORD_DIR /opt/meteord
