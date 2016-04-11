@@ -2,35 +2,10 @@ set -e
 
 if [ -d /bundle ]; then
   cd /bundle
-  tar xzf *.tar.gz
-  cd /bundle/bundle/programs/server/
-  npm i
-  #rm -rf npm/node_modules/meteor/npm-bcrypt/node_modules/*
-  #npm i bcrypt
-  cd /bundle/bundle/
-elif [[ $BUNDLE_URL ]]; then
-  cd /tmp
-  curl -L -o bundle.tar.gz $BUNDLE_URL
-  tar xzf bundle.tar.gz
-  cd /tmp/bundle/programs/server/
-  npm i
-  cd /tmp/bundle/
-elif [ -d /built_app ]; then
-  cd /built_app
+  npm install --production
 else
-  echo "=> You don't have an meteor app to run in this image."
+  echo "=> You don't have a node app to run in this image."
   exit 1
-fi
-
-if [[ $REBUILD_NPM_MODULES ]]; then
-  if [ -f /opt/meteord/rebuild_npm_modules.sh ]; then
-    cd programs/server
-    bash /opt/meteord/rebuild_npm_modules.sh
-    cd ../../
-  else
-    echo "=> Use meteorhacks/meteord:bin-build for binary bulding."
-    exit 1
-  fi
 fi
 
 # Set a delay to wait to start meteor container
@@ -40,7 +15,15 @@ if [[ $DELAY ]]; then
 fi
 
 # Honour already existing PORT setup
-export PORT=${PORT:-80}
+# Node no necesita especificar puerto
+# export PORT=${PORT:-80}
 
-echo "=> Starting meteor app on port:$PORT"
-node main.js
+# echo "=> Starting node app on port:$PORT"
+if [ -f deploy.json ]
+then
+  echo "=> Starting node app con forever from deploy.json ..."
+  forever start ./deploy.json
+else
+  echo "=> ERROR: no deploy.json configuration found."
+  exit 1
+fi
