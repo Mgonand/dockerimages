@@ -2,10 +2,13 @@ set -e
 
 if [ -d /bundle ]; then
   cd /bundle
-  npm install --production
-elif [[ $APP_NODE_DIR ]]; then
-  cd $APP_NODE_DIR
-  npm install --production
+  if [[ $APP_NODE_DIR ]]; then
+    cd $APP_NODE_DIR
+    npm install --production
+    cd ..
+  else
+    npm install --production
+  fi
 else
   echo "=> You don't have a node app to run in this image."
   exit 1
