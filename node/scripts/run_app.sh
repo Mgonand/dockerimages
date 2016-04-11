@@ -30,7 +30,7 @@ fi
 if [ -f deploy.json ]
 then
   echo "=> Starting node app con forever from deploy.json ..."
-  IS_PROD=1 forever start ./deploy.json
+  IS_PROD=1 /opt/nodejs/bin/forever start ./deploy.json
 else
   echo "=> ERROR: no deploy.json configuration found."
   exit 1
