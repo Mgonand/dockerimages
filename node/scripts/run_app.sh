@@ -17,16 +17,15 @@ else
 fi
 
 # Set a delay to wait to start meteor container
-if [[ $DELAY ]]; then
-  echo "Delaying startup for $DELAY seconds"
-  sleep $DELAY
-fi
+echo "Delaying startup for 2 seconds"
+sleep 2
 
 # Honour already existing PORT setup
 # Node no necesita especificar puerto
 # export PORT=${PORT:-80}
 
 # echo "=> Starting node app on port:$PORT"
+pwd
 if [ -f deploy.json ]
 then
   echo "=> Starting node app con forever from deploy.json ..."
