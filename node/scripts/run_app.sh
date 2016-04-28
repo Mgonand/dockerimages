@@ -5,9 +5,9 @@ if [ -d /bundle ]; then
   npm install -g forever
   if [[ $APP_NODE_DIR ]]; then
     echo "=> Node app is in a inner directory. *************"
+    mv deploy.json $APP_NODE_DIR/
     cd $APP_NODE_DIR
     npm install --production
-    cd /bundle
   else
     npm install --production
   fi
@@ -17,8 +17,8 @@ else
 fi
 
 # Set a delay to wait to start meteor container
-echo "Delaying startup for 2 seconds"
-sleep 2
+#echo "Delaying startup for 2 seconds"
+#sleep 1
 
 # Honour already existing PORT setup
 # Node no necesita especificar puerto
