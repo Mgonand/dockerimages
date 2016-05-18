@@ -3,7 +3,7 @@ set -e
 curl -O http://www.imagemagick.org/download/ImageMagick.tar.gz
 tar xzf ImageMagick.tar.gz
 cd ImageMagick*
-./configure
+./configure --enable-delegate-build --enable-shared --with-modules
 make
 make install
 ldconfig /usr/local/lib
