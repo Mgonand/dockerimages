@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+apt-get install libltdl7 -y
 curl -O http://www.imagemagick.org/download/ImageMagick.tar.gz
 tar xzf ImageMagick.tar.gz
 cd ImageMagick*
