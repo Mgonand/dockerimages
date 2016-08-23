@@ -4,9 +4,12 @@ if [ -d /bundle ]; then
   cd /bundle
   tar xzf *.tar.gz
   cd /bundle/bundle/programs/server/
-  npm i
-  #rm -rf npm/node_modules/meteor/npm-bcrypt/node_modules/*
-  #npm i bcrypt
+  npm install
+  if [[ -e npm/node_modules/meteor/npm-bcrypt/node_modules/bcrypt ]] ; then
+      rm -rf npm/node_modules/meteor/npm-bcrypt/node_modules/bcrypt
+      npm install --update-binary -f bcrypt
+      cp -r node_modules/bcrypt npm/node_modules/meteor/npm-bcrypt/node_modules/bcrypt
+  fi
   cd /bundle/bundle/
 elif [[ $BUNDLE_URL ]]; then
   cd /tmp
