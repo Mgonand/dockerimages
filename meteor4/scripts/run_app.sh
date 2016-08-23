@@ -56,7 +56,7 @@ if [ -d /bundle ]; then
   #tar xzf *.tar.gz
   #cd /bundle/bundle/programs/server/
   #npm install
-  #cd /bundle/bundle/
+  cd /bundle/bundle/
 elif [[ $BUNDLE_URL ]]; then
   cd /tmp
   curl -L -o bundle.tar.gz $BUNDLE_URL
