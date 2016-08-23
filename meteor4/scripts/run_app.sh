@@ -71,7 +71,7 @@ else
   exit 1
 fi
 
-if [[ $REBUILD_NPM_MODULES ]]; then
+#if [[ $REBUILD_NPM_MODULES ]]; then
   #echo "****** Rebuilding npm modules ******"
   #cd /bundle/bundle/programs/server/
   #if [ -d npm ]; then
@@ -88,7 +88,7 @@ if [[ $REBUILD_NPM_MODULES ]]; then
   #  npm install --update-binary -f bcrypt
   #  cp -r node_modules/bcrypt npm/node_modules/meteor/npm-bcrypt/node_modules/bcrypt
   #fi
-fi
+#fi
 
 cd /bundle/bundle/
 # Set a delay to wait to start meteor container
