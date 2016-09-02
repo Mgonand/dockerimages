@@ -71,24 +71,24 @@ else
   exit 1
 fi
 
-#if [[ $REBUILD_NPM_MODULES ]]; then
-  #echo "****** Rebuilding npm modules ******"
-  #cd /bundle/bundle/programs/server/
-  #if [ -d npm ]; then
-  #  (cd npm && rebuild_binary_npm_modules)
-  #fi
+if [[ $REBUILD_NPM_MODULES ]]; then
+  echo "****** Rebuilding npm modules ******"
+  cd /bundle/bundle/programs/server/
+  if [ -d npm ]; then
+    (cd npm && rebuild_binary_npm_modules)
+  fi
 
-  #if [ -d node_modules ]; then
-  #  (cd node_modules && gyp_rebuild_inside_node_modules)
-  #fi
+  if [ -d node_modules ]; then
+    (cd node_modules && gyp_rebuild_inside_node_modules)
+  fi
   
-  #if [[ -e npm/node_modules/meteor/npm-bcrypt/node_modules/bcrypt ]] ; then
-  #  echo "******** bcrypt fix ********"
-  #  rm -rf npm/node_modules/meteor/npm-bcrypt/node_modules/bcrypt
-  #  npm install --update-binary -f bcrypt
-  #  cp -r node_modules/bcrypt npm/node_modules/meteor/npm-bcrypt/node_modules/bcrypt
-  #fi
-#fi
+  if [[ -e npm/node_modules/meteor/npm-bcrypt/node_modules/bcrypt ]] ; then
+    echo "******** bcrypt fix ********"
+    rm -rf npm/node_modules/meteor/npm-bcrypt/node_modules/bcrypt
+    npm install --update-binary -f bcrypt
+    cp -r node_modules/bcrypt npm/node_modules/meteor/npm-bcrypt/node_modules/bcrypt
+  fi
+fi
 
 cd /bundle/bundle/
 # Set a delay to wait to start meteor container
