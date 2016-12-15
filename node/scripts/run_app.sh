@@ -5,7 +5,10 @@ if [ -d /bundle ]; then
   npm install -g forever
   if [[ $APP_NODE_DIR ]]; then
     echo "=> Node app is in a inner directory. *************"
-    mv deploy.json $APP_NODE_DIR/
+    if [ -f deploy.json ]
+    then
+      mv deploy.json $APP_NODE_DIR/
+    fi
     cd $APP_NODE_DIR
     npm install --production
   else
