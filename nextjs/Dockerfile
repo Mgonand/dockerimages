@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 MAINTAINER BinPar Team S.L.
 
 ENV METEORD_DIR /opt/meteord
