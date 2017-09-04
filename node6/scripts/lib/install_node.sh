@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-NODE_VERSION=4.8.4
+NODE_VERSION=6.11.1
 NODE_ARCH=x64
 
 # check we need to do this or not
