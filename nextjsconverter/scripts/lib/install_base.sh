@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+apt-add-repository ppa:anton+/photo-video-apps
 apt-get update -y
 apt-get -y upgrade
 apt-get install -y build-essential
