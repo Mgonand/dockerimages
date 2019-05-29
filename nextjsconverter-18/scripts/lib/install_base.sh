@@ -5,7 +5,7 @@ apt-get -y upgrade
 apt-get install -y build-essential
 apt-get install -y software-properties-common
 apt-get install -y curl git unzip wget bzip2 python
-apt-get install snapd
+apt-get install snapd -y
 snap install pdftk
 apt-get install -qq -y cmake gcc libgetopt++-dev git
 apt-get install -qq -y pkg-config libopenjpeg-dev libfontconfig1-dev libfontforge-dev poppler-data poppler-utils poppler-dbg
