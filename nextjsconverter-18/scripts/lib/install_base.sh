@@ -11,3 +11,4 @@ apt install -qq -y pkg-config libopenjpeg-dev libfontconfig1-dev libfontforge-de
 apt install -qq -y packaging-dev pkg-config python-dev libpango1.0-dev libglib2.0-dev libxml2-dev giflib-dbg
 apt install -qq -y libjpeg-dev libtiff-dev uthash-dev libspiro-dev
 apt install -y ghostscript
+apt install -y -f
