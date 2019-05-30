@@ -11,5 +11,5 @@ apt-get install -qq -y packaging-dev pkg-config python-dev libpango1.0-dev libgl
 apt-get install -qq -y libjpeg-dev libtiff-dev uthash-dev libspiro-dev
 apt-add-repository ppa:anton+/photo-video-apps -y
 apt-get update -y
-apt-get install -y ghostscript
 apt-get install -y pdftk
+apt-get install -y ghostscript
