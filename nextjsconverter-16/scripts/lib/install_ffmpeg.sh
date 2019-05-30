@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 apt-get install software-properties-common -y
-add-apt-repository ppa:mc3man/trusty-media -y
+add-apt-repository ppa:jonathonf/ffmpeg-4 -y
 apt-get update -y
-apt-get dist-upgrade -y
 apt-get install ffmpeg -y
