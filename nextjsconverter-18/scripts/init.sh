@@ -5,6 +5,7 @@ bash $METEORD_DIR/lib/install_node.sh
 bash $METEORD_DIR/lib/install_graphicsmagick.sh
 bash $METEORD_DIR/lib/install_imagemagick.sh
 bash $METEORD_DIR/lib/install_ffmpeg.sh
+bash $METEORD_DIR/lib/install_pdftk.sh
 bash $METEORD_DIR/lib/install_poppler.sh
 bash $METEORD_DIR/lib/install_fontforge.sh
 bash $METEORD_DIR/lib/install_pdf2htmlex.sh
