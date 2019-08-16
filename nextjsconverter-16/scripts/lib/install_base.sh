@@ -2,7 +2,6 @@
 set -e
 echo "Europe/Dublin" > /etc/timezone
 ln -fs /usr/share/zoneinfo/Europe/Dublin /etc/localtime
-dpkg-reconfigure -f noninteractive tzdata
 apt-get update -y
 apt-get -y upgrade
 apt-get install apt-utils -y
