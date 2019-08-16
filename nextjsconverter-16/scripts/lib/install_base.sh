@@ -1,9 +1,10 @@
 #!/bin/bash
 set -e
-echo "Europe/Dublin" > /etc/timezone
-ln -fs /usr/share/zoneinfo/Europe/Dublin /etc/localtime
 apt-get update -y
 apt-get -y upgrade
+echo "Europe/Dublin" > /etc/timezone
+ln -fs /usr/share/zoneinfo/Europe/Dublin /etc/localtime
+apt-get install -y tzdata
 apt-get install apt-utils -y
 apt-get install -y build-essential
 apt-get install -y software-properties-common
